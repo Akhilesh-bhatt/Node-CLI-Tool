@@ -1,2 +1,12 @@
 #!/usr/bin/env node
-console.log("hello world");
+const arg = require('arg');
+
+const args = arg({
+  "--start": Boolean,
+  "--build": Boolean
+})
+// console.log(args);
+
+if(args["--start"]){
+  console.log("starting the tool");
+}
