@@ -20,6 +20,7 @@
     "better-ajv-errors": "^1.2.0",
     "chalk": "^2.4.1",
     "cosmiconfig": "^8.3.5",
+    "debug": "^4.3.4",
     "pkg-up": "^3.1.0"
   }
 }

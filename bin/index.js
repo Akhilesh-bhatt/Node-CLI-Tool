@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const logger = require('../src/logger')('bin');
 const arg = require('arg');
 const chalk = require('chalk');
 const getConfig = require('../src/config/config-mgr')
@@ -9,13 +10,15 @@ try {
     "--start": Boolean,
     "--build": Boolean
   })
+
+  logger.debug('Received args', args);
   
   if(args["--start"]){
     const config = getConfig();
     start(config);
   }  
 } catch (e) {
-  console.log(chalk.yellow(e.message));
+  logger.warning(e.message);
   console.log();
   usage();
 }
